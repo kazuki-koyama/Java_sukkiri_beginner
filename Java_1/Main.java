@@ -1,4 +1,3 @@
-
 public class Main {
 	public static void main(String[] args) {
 		// 練習問題1-2
