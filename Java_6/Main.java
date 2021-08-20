@@ -1,18 +1,15 @@
 public class Main {
   public static void main(String[] args) {
-    double triangleArea = calcTriangleArea(10.0, 5.0);
-    System.out.println("三角形の面積：" + triangleArea + "平方cm");
-    double circleArea = calcCircleArea(5.0);
-    System.out.println("円の面積：" + circleArea + "平方cm");
+    introduceOneself();
   }
 
-  public static double calcTriangleArea(double bottom, double height) {
-    double area = (bottom * height) / 2;
-    return area;
-  }
-
-  public static double calcCircleArea(double radius) {
-    double area = radius * radius * 3.14;
-    return area;
+  public static void introduceOneself() {
+    String name = "Minato";
+    int age = 29;
+    double height = 184.5;
+    char zodiac = '申';
+    System.out.println("私の名前は、" + name + "です");
+    System.out.println(zodiac + "年生まれの" + age + "歳です");
+    System.out.println("身長は、" + height + "cmあります");
   }
 }
