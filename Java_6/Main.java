@@ -1,15 +1,17 @@
-public class Main {
+public class Calc {
   public static void main(String[] args) {
-    introduceOneself();
+    int a = 10;
+    int b = 2;
+    int total = tasu(a, b);
+    int delta = hiku(a, b);
+    System.out.println("足すと" + total + "、引くと" + delta);
   }
 
-  public static void introduceOneself() {
-    String name = "Minato";
-    int age = 29;
-    double height = 184.5;
-    char zodiac = '申';
-    System.out.println("私の名前は、" + name + "です");
-    System.out.println(zodiac + "年生まれの" + age + "歳です");
-    System.out.println("身長は、" + height + "cmあります");
+  public static int tasu(int a, int b) {
+    return (a + b);
+  }
+
+  public static int hiku(int a, int b) {
+    return (a - b);
   }
 }
