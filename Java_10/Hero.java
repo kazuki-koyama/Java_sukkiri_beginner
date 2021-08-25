@@ -1,6 +1,10 @@
 public class Hero {
-  String name = "ミナト";
+  String name;
   int hp = 100;
+
+  public Hero(String name) {
+    this.name = name;
+  }
 
   public void attack(Matango m) {
     System.out.println(this.name + "の攻撃！");
