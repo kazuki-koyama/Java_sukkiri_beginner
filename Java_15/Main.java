@@ -2,10 +2,17 @@
 // import java.util.Date;
 // import java.util.Calendar;
 // import java.text.SimpleDateFormat;
-import java.time.*;
+// import java.time.*;
 
 public class Main {
   public static void main(String[] args) {
+    // 練習問題15-1
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < 100; i++) {
+      sb.append(i + 1).append(",");
+    }
+    String s = sb.toString();
+    String[] array = s.split(",");
     /*
      * Date now = new Date(); System.out.println(now);
      * System.out.println(now.getTime()); Date past = new Date(1600705425827L);
@@ -23,27 +30,31 @@ public class Main {
     // c.setTime(now);
     // int y = c.get(Calendar.YEAR); /* 年を取り出す */
     // System.out.println("今年は" + y + "年です");
-    // Instantの生成
-    Instant i1 = Instant.now();
 
-    // Instantとlong値との相互変換
-    Instant i2 = Instant.ofEpochMilli(1600705425827L);
-    long l = i2.toEpochMilli();
+    // // Instantの生成
+    // Instant i1 = Instant.now();
 
-    // ZonedDateTimeの生成方法
-    ZonedDateTime z1 = ZonedDateTime.now();
-    ZonedDateTime z2 = ZonedDateTime.of(2020, 1, 2, 3, 4, 5, 6, ZoneId.of("Asia/Tokyo"));
+    // // Instantとlong値との相互変換
+    // Instant i2 = Instant.ofEpochMilli(1600705425827L);
+    // long l = i2.toEpochMilli();
 
-    // InstantとZoneDateTimeの相互変換
-    Instant i3 = z2.toInstant();
-    ZonedDateTime z3 = i3.atZone(ZoneId.of("Europe/London"));
+    // // ZonedDateTimeの生成方法
+    // ZonedDateTime z1 = ZonedDateTime.now();
+    // ZonedDateTime z2 = ZonedDateTime.of(2020, 1, 2, 3, 4, 5, 6,
+    // ZoneId.of("Asia/Tokyo"));
 
-    // ZonedDateTimeの利用方法
-    System.out.println("東京:" + z2.getYear() + z2.getMonth() + z2.getDayOfMonth());
-    System.out.println("ロンドン:" + z3.getYear() + z3.getMonth() + z3.getDayOfMonth());
-    if (z2.isEqual(z3)) {
-      System.out.println("これらは同じ瞬間を指しています");
-    }
+    // // InstantとZoneDateTimeの相互変換
+    // Instant i3 = z2.toInstant();
+    // ZonedDateTime z3 = i3.atZone(ZoneId.of("Europe/London"));
+
+    // // ZonedDateTimeの利用方法
+    // System.out.println("東京:" + z2.getYear() + z2.getMonth() +
+    // z2.getDayOfMonth());
+    // System.out.println("ロンドン:" + z3.getYear() + z3.getMonth() +
+    // z3.getDayOfMonth());
+    // if (z2.isEqual(z3)) {
+    // System.out.println("これらは同じ瞬間を指しています");
+    // }
   }
 
   // public static void main(String[] args) throws Exception {
