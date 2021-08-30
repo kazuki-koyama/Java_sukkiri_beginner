@@ -7,12 +7,21 @@
 public class Main {
   public static void main(String[] args) {
     // 練習問題15-1
-    StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < 100; i++) {
-      sb.append(i + 1).append(",");
+    // StringBuilder sb = new StringBuilder();
+    // for (int i = 0; i < 100; i++) {
+    // sb.append(i + 1).append(",");
+    // }
+    // String s = sb.toString();
+    // String[] array = s.split(",");
+
+    // 練習問題15-2
+    public String concatPath(String folder, String file) {
+      if(!folder.endsWith("¥¥")) {
+        folder += "¥¥";
+      }
+      return folder + file;
     }
-    String s = sb.toString();
-    String[] array = s.split(",");
+
     /*
      * Date now = new Date(); System.out.println(now);
      * System.out.println(now.getTime()); Date past = new Date(1600705425827L);
