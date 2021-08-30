@@ -1,7 +1,7 @@
 
-// import java.util.Date;
-// import java.util.Calendar;
-// import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 // import java.time.*;
 
 public class Main {
@@ -15,13 +15,22 @@ public class Main {
     // String[] array = s.split(",");
 
     // 練習問題15-2
-    public String concatPath(String folder, String file) {
-      if(!folder.endsWith("¥¥")) {
-        folder += "¥¥";
-      }
-      return folder + file;
-    }
-
+    // public String concatPath(String folder, String file) {
+    // if(!folder.endsWith("¥¥")) {
+    // folder += "¥¥";
+    // }
+    // return folder + file;
+    // }
+    // 練習問題15-4
+    Date now = new Date();
+    Calendar c = Calendar.getInstance();
+    c.setTime(now);
+    int day = c.get(Calendar.DAY_OF_MONTH);
+    day += 100;
+    c.set(Calendar.DAY_OF_MONTH, day);
+    Date future = c.getTime();
+    SimpleDateFormat f = new SimpleDateFormat("西暦yyyy年mm月dd日");
+    System.out.println(f.format(future));
     /*
      * Date now = new Date(); System.out.println(now);
      * System.out.println(now.getTime()); Date past = new Date(1600705425827L);
