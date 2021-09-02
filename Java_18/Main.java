@@ -1,3 +1,4 @@
+// import java.sql.*;
 import java.io.InputStream;
 import java.net.URL;
 // import java.io.*;
@@ -27,5 +28,12 @@ public class Main {
       System.out.print(c);
       i = is.read();
     }
+
+    // Class.forName("org.h2.Driver");
+    // String dburl = "jdbc:h2:~/test";
+    // String sql = "INSERT INTO EMPLOYEES(NAME) VALUES('aoki')";
+    // Connection conn = DriverManager.getConnection(dburl);
+    // conn.createStatement().executeUpdate(sql);
+    // conn.close();
   }
 }
