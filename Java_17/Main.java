@@ -1,6 +1,8 @@
+import java.io.IOException;
+
 public class Main {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     // 練習問題17-2
     // try {
     // String s = null;
@@ -13,10 +15,14 @@ public class Main {
     // }
 
     // 練習問題17-3
-    try {
-      int i = Integer.parseInt("三");
-    } catch (NumberFormatException e) {
-      System.out.println("NumberFormatException例外をcatchしました");
-    }
+    // try {
+    //   int i = Integer.parseInt("三");
+    // } catch (NumberFormatException e) {
+    //   System.out.println("NumberFormatException例外をcatchしました");
+    // }
+
+    // 練習問題17-4
+    System.out.println("プログラムが起動しました");
+    throw new IOException();
   }
 }
