@@ -1,0 +1,2 @@
+FileReaderでdata.txtを読み込んでいます。
+読み込みが完了しました。
