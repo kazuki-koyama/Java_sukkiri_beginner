@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Book {
+public class Book implements Comparable<Book> {
   private String title;
   private Date publishDate;
   private String comment;
@@ -27,6 +27,10 @@ public class Book {
       return false;
     }
     return true;
+  }
+
+  public int compareTo(Book o) {
+    return this.publishDate.compareTo(o.publishDate);
   }
 
   public String getTitle() {
