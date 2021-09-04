@@ -1,3 +1,7 @@
+// package packageA;
+
+// import static packageA.AccountType.FUTSU;
+
 public class Main {
   public static void main(String[] args) {
     Account a1 = new Account("1732050", AccountType.FUTSU);

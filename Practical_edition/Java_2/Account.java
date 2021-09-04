@@ -1,5 +1,8 @@
 // 口座クラスです（列挙型活用ver.）
 // 【利用例】new Account("1732050", AccountType.FUTSU);
+// package packageA;
+// static import packageA.AccountType.*;
+
 public class Account {
   private String accountNo;
   private int zandaka;
