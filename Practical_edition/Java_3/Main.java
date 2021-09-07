@@ -20,11 +20,11 @@ public class Main {
     // System.out.println(f2.apply(66, "Smith"));
 
     // 練習問題3-2
-    Func1 f1 = x -> x % 2 == 1;
+    IntPredicate f1 = x -> x % 2 == 1;
     Func2 f2 = (point, name) -> {
       return name + "さんは" + (point > 65 ? "合格" : "不合格");
     };
-    System.out.println(f1.call(15));
+    System.out.println(f1.test(15));
     System.out.println(f2.call(66, "Smith"));
   }
 }
