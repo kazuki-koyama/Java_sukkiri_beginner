@@ -1,3 +1,4 @@
+@FunctionalInterface
 public interface Func1 {
-  boolean call(int x);
+  public abstract boolean call(int x);
 }
