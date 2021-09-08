@@ -5,6 +5,7 @@ public class Main {
 
     b1.name = "ミナト";
     b1.address = "東京都";
+    System.out.println(b1.hashCode());
     b2.name = "ミナト";
     b2.address = "東京都";
     System.out.println(b1.equals(b2));
