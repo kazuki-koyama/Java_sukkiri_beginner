@@ -1,4 +1,5 @@
 import java.util.*;
+import org.apache.commons.lang3.builder.*;
 
 public class Book implements Comparable<Book>, Cloneable {
   private String title;
@@ -6,31 +7,16 @@ public class Book implements Comparable<Book>, Cloneable {
   private String comment;
 
   public int hashCode() {
-    return Objects.hash(this.title, this.publishDate, this.comment);
+    return HashCodeBuilder.reflectionHashCode(this);
   }
 
   public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o == null) {
-      return false;
-    }
-    if (!(o instanceof Book)) {
-      return false;
-    }
-    Book b = (Book) o;
-    if (!publishDate.equals(b.publishDate)) {
-      return false;
-    }
-    if (!title.equals(b.title)) {
-      return false;
-    }
-    return true;
+    return EqualsBuilder.reflectionEquals(this, o);
   }
 
   public int compareTo(Book o) {
-    return this.publishDate.compareTo(o.publishDate);
+    return CompareToBuilder.reflectionCompare(this, o, "comment", "title");
+    // return this.publishDate.compareTo(o.publishDate);
   }
 
   public Book clone() {
