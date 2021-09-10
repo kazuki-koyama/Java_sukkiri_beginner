@@ -1,14 +1,14 @@
 import java.io.*;
 
 public class Main {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     // ▼書き込み
-    try (FileWriter fw = new FileWriter("rpgsave.dat", true);) {
-      fw.write('A');
-      fw.flush();
-    } catch (IOException e) {
-      System.out.println("ファイル書き込みエラーです");
-    }
+    // try (FileWriter fw = new FileWriter("rpgsave.dat", true);) {
+    // fw.write('A');
+    // fw.flush();
+    // } catch (IOException e) {
+    // System.out.println("ファイル書き込みエラーです");
+    // }
 
     // ▼読み取り
     // FileReader fw = new FileReader("rpgsave.dat");
@@ -21,5 +21,19 @@ public class Main {
     // }
     // System.out.println("ファイルの末尾に到達しました");
     // fw.close();
+
+    // 練習問題6-1
+    String inFile = args[0];
+    String outFile = args[1];
+    FileInputStream fis = new FileInputStream(inFile);
+    FileOutputStream fos = new FileOutputStream(outFile);
+    int i = fis.read();
+    while (i != -1) {
+      fos.write(i);
+      i = fis.read();
+    }
+    fos.flush();
+    fos.close();
+    fis.close();
   }
 }
