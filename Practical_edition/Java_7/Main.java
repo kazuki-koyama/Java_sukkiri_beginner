@@ -11,14 +11,21 @@ public class Main {
     // p.store(fw, "勇者の情報"); // ファイルへ書き出す
     // fw.close();
     // ▼読み取り
-    Reader fr = new FileReader("c:\\rpgdata.properties");
+    // Reader fr = new FileReader("c:\\rpgdata.properties");
+    // Properties p = new Properties();
+    // p.load(fr); // ファイル内容を読み取る
+    // String name = p.getProperty("heroName"); // キーを指定し値を取り出す
+    // String strHp = p.getProperty("heroHp");
+    // int hp = Integer.parseInt(strHp);
+    // System.out.println("勇者の名前：" + name);
+    // System.out.println("勇者のHP：" + hp);
+    // fr.close();
+
+    // 練習問題7-1
+    Reader fr = new FileReader("pref.properties");
     Properties p = new Properties();
-    p.load(fr); // ファイル内容を読み取る
-    String name = p.getProperty("heroName"); // キーを指定し値を取り出す
-    String strHp = p.getProperty("heroHp");
-    int hp = Integer.parseInt(strHp);
-    System.out.println("勇者の名前：" + name);
-    System.out.println("勇者のHP：" + hp);
+    p.load(fr);
+    System.out.println(p.getProperty("aichi.capital") + ":" + p.getProperty("aichi.food"));
     fr.close();
   }
 }
