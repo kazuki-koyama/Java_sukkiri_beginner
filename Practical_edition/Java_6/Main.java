@@ -1,8 +1,9 @@
 import java.io.*;
-import java.nio.file.*;
+import java.util.zip.GZIPOutputStream;
+// import java.nio.file.*;
 
 public class Main {
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     // ▼書き込み
     // try (FileWriter fw = new FileWriter("rpgsave.dat", true);) {
     // fw.write('A');
@@ -38,6 +39,26 @@ public class Main {
     // fis.close();
 
     // ▼別解(java.nio.file.Filesクラス)
-    Files.copy(Paths.get(args[0]), Paths.get(args[1]));
+    // Files.copy(Paths.get(args[0]), Paths.get(args[1]));
+
+    // 練習問題6-2
+    // バッファリング、圧縮(zip)、例外処理
+    String inFile = args[0];
+    String outFile = args[1];
+    try (
+      FileInputStream fis = new FileInputStream(inFile);
+      FileOutputStream fos = new FileOutputStream(outFile);
+      BufferedOutputStream bos = new BufferedOutputStream(fos);
+      GZIPOutputStream gzos = new GZIPOutputStream(bos);
+    ) {
+      int i = fis.read();
+      while (i != -1) {
+      gzos.write(i);
+      i = fis.read();
+      }
+      gzos.flush();
+    } catch (IOException e) {
+      System.out.println("ファイル処理に失敗しました");
+    }
   }
 }
