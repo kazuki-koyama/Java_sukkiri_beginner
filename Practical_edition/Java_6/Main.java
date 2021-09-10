@@ -1,4 +1,5 @@
 import java.io.*;
+import java.nio.file.*;
 
 public class Main {
   public static void main(String[] args) throws Exception {
@@ -23,17 +24,20 @@ public class Main {
     // fw.close();
 
     // 練習問題6-1
-    String inFile = args[0];
-    String outFile = args[1];
-    FileInputStream fis = new FileInputStream(inFile);
-    FileOutputStream fos = new FileOutputStream(outFile);
-    int i = fis.read();
-    while (i != -1) {
-      fos.write(i);
-      i = fis.read();
-    }
-    fos.flush();
-    fos.close();
-    fis.close();
+    // String inFile = args[0];
+    // String outFile = args[1];
+    // FileInputStream fis = new FileInputStream(inFile);
+    // FileOutputStream fos = new FileOutputStream(outFile);
+    // int i = fis.read();
+    // while (i != -1) {
+    // fos.write(i);
+    // i = fis.read();
+    // }
+    // fos.flush();
+    // fos.close();
+    // fis.close();
+
+    // ▼別解(java.nio.file.Filesクラス)
+    Files.copy(Paths.get(args[0]), Paths.get(args[1]));
   }
 }
