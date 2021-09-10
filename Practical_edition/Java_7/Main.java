@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     // Writer fw = new FileWriter("rpgsave.properties");
     // Properties p = new Properties();
     // p.setProperty("heroName", "アサカ"); // データのセット
@@ -22,10 +22,13 @@ public class Main {
     // fr.close();
 
     // 練習問題7-1
-    Reader fr = new FileReader("pref.properties");
-    Properties p = new Properties();
-    p.load(fr);
-    System.out.println(p.getProperty("aichi.capital") + ":" + p.getProperty("aichi.food"));
-    fr.close();
+    try (Reader fr = new FileReader("pref.properties");) {
+      Properties p = new Properties();
+      p.load(fr);
+      System.out.println(p.getProperty("aichi.capital") + ":" + p.getProperty("aichi.food"));
+      fr.close();
+    } catch (Exception e) {
+      System.out.println("ファイル処理に失敗しました");
+    }
   }
 }
