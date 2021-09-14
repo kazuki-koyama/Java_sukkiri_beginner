@@ -30,12 +30,25 @@ public class Main {
     // sock.close();
 
     // ▼サーバプログラム
-    System.out.println("起動完了");
-    ServerSocket svSock = new ServerSocket(39648);
-    Socket sock = svSock.accept();
-    System.out.println(sock.getInetAddress() + "から接続");
-    sock.getOutputStream().write("WELCOME".getBytes());
-    sock.getOutputStream().flush();
-    sock.close();
+    // System.out.println("起動完了");
+    // ServerSocket svSock = new ServerSocket(39648);
+    // Socket sock = svSock.accept();
+    // System.out.println(sock.getInetAddress() + "から接続");
+    // sock.getOutputStream().write("WELCOME".getBytes());
+    // sock.getOutputStream().flush();
+    // sock.close();
+
+    // 練習問題8-1
+    URL url = new URL("https://dokojava.jp/favicon.ico");
+    InputStream is = url.openStream();
+    OutputStream os = new FileOutputStream("dj.ico");
+    int i = is.read();
+    while (i != -1) {
+      os.write((byte) i);
+      i = is.read();
+    }
+    is.close();
+    os.flush();
+    os.close();
   }
 }
