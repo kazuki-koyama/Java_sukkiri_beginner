@@ -17,17 +17,19 @@ public class Main {
       // STEP 2: 送信処理
       // STEP 2-(2)-1 送信すべきSQL文のひな形を準備
       PreparedStatement pstmt = con.prepareStatement
-          ("SELECT * FROM MONSTERS");
+          ("SELECT * FROM MONSTERS WHERE NAME = ?");
       // STEP 2-(2)-2 ひな形に値を流し込みSQL文を組み立てる
-      // パラメータなし
+      pstmt.setString(1, "ゴブリン");
       // STEP 2-(2)-3 組み立て終えたSQL文をDBMSに送信する
       ResultSet rs = pstmt.executeQuery();
       // STEP 2-(2)-4 結果表を処理する
-      // ********** コード9-4 ここから **********
-      while (rs.next()) {
-        System.out.println(rs.getString("NAME"));
+      // ********** コード9-5 ここから **********
+      if (rs.next()) {
+        System.out.println("ゴブリンのHPは" + rs.getInt("HP"));
+      } else {
+        System.out.println("ゴブリンはありませんでした");
       }
-      // ********** コード9-4 ここまで **********
+      // ********** コード9-5 ここまで **********
       rs.close();
       pstmt.close();                  // 後片付け
 
