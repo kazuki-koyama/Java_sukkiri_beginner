@@ -10,12 +10,12 @@ public class MovieTest {
   @Test
   public void testInstantiateWithNoArgument() {
     Movie m = new Movie();
-    assertThrows(IllegalArgumentException.class, () -> m.setTitle());
+    assertEquals("ダミー", m.title);
   }
 
   @Test
   public void testInstantiateWithOneArgument() {
     Movie m1 = new Movie("Title");
-    assertThrows(IllegalArgumentException.class, () -> m1.setTitle("Tile"));
+    assertEquals("Title", m1.title);
   }
 }
