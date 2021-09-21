@@ -23,4 +23,10 @@ public class BankTest {
     Bank b = new Bank();
     assertThrows(IllegalArgumentException.class, () -> { b.setName("ミヤ");});
   }
+  // (4)正常系：セットした内容を取得できるか
+  @Test public void getName() {
+    Bank b = new Bank();
+    b.setName("ミヤビ");
+    assertEquals("ミヤビ", b.getName());
+  }
 }
