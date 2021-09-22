@@ -7,11 +7,11 @@ public class Main {
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setSize(400, 200);
 
-    // frame.setLayout(new FlowLayout());
-    // JLabel label = new JLabel("Hello World!!");  // ラベルを生成して、
-    // frame.add(label);                            // フレームに追加
-    // JButton button = new JButton("押してね");     // ボタンを生成して、
-    // frame.add(button);                           // フレームに追加
+    frame.setLayout(new FlowLayout());
+    JLabel label = new JLabel("Hello World!!");
+    frame.add(label);
+    JButton button = new JButton("押してね");
+    frame.add(button);
 
     frame.setVisible(true);
     System.out.println("フレームを表示");
