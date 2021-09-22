@@ -10,4 +10,12 @@ public class IDPanel extends JPanel {
     this.add(label, BorderLayout.WEST);
     this.add(id, BorderLayout.CENTER);
   }
+
+  public String getText() {
+    return this.id.getText();
+  }
+
+  public void setText(String newValue) {
+    this.id.setText(newValue);
+  }
 }
